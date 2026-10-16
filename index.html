@@ -3,251 +3,322 @@
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#6d28d9">
-<title>SHREE MART | Premium Shopping</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#6c28e8">
+<title>SHREE MART | Online Shopping</title>
 <style>
+:root{--p:#7028e8;--pink:#f3489b;--bg:#f8f5ff;--dark:#24133d}
 *{box-sizing:border-box}
-body{margin:0;background:#faf8ff;color:#24153a;font-family:Arial,sans-serif}
-button,input{font:inherit}
-button{cursor:pointer}
-.top{text-align:center;background:#25113f;color:white;padding:9px;font-size:12px}
-header{position:sticky;top:0;z-index:5;background:#ffffffed;backdrop-filter:blur(12px);padding:13px 5%;display:flex;align-items:center;gap:12px;flex-wrap:wrap;border-bottom:1px solid #eee5fa}
-.logo{font-size:22px;font-weight:900;white-space:nowrap}
-.logo span{color:#9333ea}
-.search{flex:1;min-width:140px;padding:12px;border:1px solid #e9def8;border-radius:13px;background:#f8f4ff;outline:none}
-.cart{padding:11px 14px;border:0;border-radius:12px;background:#6d28d9;color:white;font-weight:bold}
-main{max-width:1150px;margin:auto;padding:20px 15px}
-.hero{background:linear-gradient(120deg,#351064,#7028c9,#ec4899);color:white;border-radius:25px;padding:35px 6%;display:flex;align-items:center;justify-content:space-between;gap:20px;overflow:hidden}
-.hero small{background:#ffffff25;padding:8px 12px;border-radius:20px}
-.hero h1{font-size:clamp(34px,6vw,55px);line-height:1.05;margin:20px 0 12px}
-.hero h1 span{color:#fde68a}
-.hero p{line-height:1.7;color:#f3e8ff;max-width:400px;font-size:14px}
-.hero button{background:white;color:#6321b4;border:0;border-radius:12px;padding:14px 17px;font-weight:bold}
-.discount{width:190px;height:190px;flex-shrink:0;border-radius:50%;background:linear-gradient(135deg,#fde68a,#f9a8d4,#c4b5fd);display:flex;flex-direction:column;justify-content:center;align-items:center;color:#50158b;box-shadow:0 15px 35px #230b493b;transform:rotate(-7deg)}
-.discount strong{font-size:53px}
-section{margin-top:32px}
-.heading{display:flex;justify-content:space-between;align-items:center;gap:10px}
-.heading h2{font-size:23px;margin:0}
-.heading p{font-size:13px;color:#786d87}
-.categories{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:16px}
-.category{background:white;border:1px solid #eee5fa;border-radius:16px;padding:15px 5px;text-align:center;color:#342348}
-.category.active{border-color:#8b5cf6;background:#f2eaff}
-.category span{font-size:28px;display:block;margin-bottom:8px}
-.category b{font-size:12px}
-.filters{display:flex;gap:8px;flex-wrap:wrap;margin:17px 0}
-.filter{background:white;border:1px solid #e9def8;border-radius:30px;padding:9px 14px;color:#5b4c70;font-size:12px}
-.filter.active{background:#6d28d9;color:white}
-.products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
-.card{background:white;border:1px solid #eee5fa;border-radius:18px;overflow:hidden;transition:.2s}
-.card:hover{transform:translateY(-3px);box-shadow:0 12px 25px #6d28d915}
-.art{height:150px;display:grid;place-items:center;position:relative}
-.art span{font-size:65px;filter:drop-shadow(0 8px 5px #0002)}
-.badge{position:absolute;top:10px;left:10px;background:white;color:#be185d;padding:5px 7px;border-radius:7px;font-size:10px;font-weight:bold}
-.heart{position:absolute;right:9px;top:9px;border:0;background:#ffffffdf;border-radius:50%;width:30px;height:30px;font-size:17px}
-.details{padding:13px}
-.details small{color:#7c3aed;font-weight:bold;text-transform:uppercase;font-size:10px}
-.details h3{font-size:14px;min-height:35px;margin:7px 0}
-.rating{font-size:12px;color:#d97706}
-.price{font-size:18px;font-weight:900;margin:12px 0}
-.old{font-size:12px;color:#999;text-decoration:line-through;font-weight:normal;margin-left:5px}
-.add{width:100%;padding:10px;border:1px solid #ddd0fb;border-radius:10px;background:#f5f0ff;color:#6d28d9;font-weight:bold}
-.add:hover{background:#6d28d9;color:white}
-.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.benefit{background:white;border:1px solid #eee5fa;border-radius:15px;padding:18px;font-size:13px}
-.benefit span{font-size:23px;margin-right:7px}
-.newsletter{background:linear-gradient(110deg,#4c1d95,#7c3aed,#db2777);border-radius:20px;padding:25px;color:white;display:flex;justify-content:space-between;align-items:center;gap:15px}
-.newsletter h2{margin:0 0 8px}
-.newsletter p{font-size:12px;color:#f3e8ff}
-.newsletter input{padding:12px;border:0;border-radius:9px;min-width:0;width:180px}
-.newsletter button{padding:12px;border:0;border-radius:9px;background:#fde68a;font-weight:bold}
-footer{background:#25113f;color:white;padding:30px 6%;margin-top:35px}
-footer p{color:#c9b8df;font-size:12px}
-.footerlinks{display:flex;gap:20px;font-size:12px}
-.footerlinks a{color:#f3e8ff}
-.note{text-align:center;background:#f0e9fc;color:#716080;padding:10px;font-size:11px}
-.overlay{display:none;position:fixed;inset:0;background:#16052b99;z-index:9}
-.overlay.show{display:block}
-.drawer{position:fixed;right:0;top:0;height:100dvh;width:min(390px,100%);background:white;z-index:10;transform:translateX(105%);transition:.25s;display:flex;flex-direction:column;padding:18px}
-.drawer.show{transform:translateX(0)}
-.drawerhead{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eee5fa}
-.drawerhead button{border:0;background:#f2eaff;border-radius:8px;padding:8px}
-.cartitems{overflow:auto;flex:1}
-.cartitem{display:flex;gap:12px;align-items:center;border-bottom:1px solid #eee5fa;padding:13px 0}
-.cartemoji{font-size:30px;padding:10px;border-radius:10px}
-.cartname{flex:1;font-size:13px}
-.qty{display:flex;gap:9px;align-items:center;margin-top:7px}
-.qty button{border:1px solid #eee;border-radius:6px;background:white;padding:3px 9px}
-.total{display:flex;justify-content:space-between;font-weight:bold;padding:15px 0}
-.checkout{padding:13px;border:0;border-radius:10px;background:linear-gradient(100deg,#6d28d9,#ec4899);color:white;font-weight:bold}
-.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#25113f;color:white;padding:12px 18px;border-radius:12px;z-index:20;display:none;font-size:13px;max-width:90%;text-align:center}
-.toast.show{display:block}
-@media(max-width:750px){
-.hero{padding:27px 20px}.discount{width:125px;height:125px}.discount strong{font-size:37px}
-.categories{grid-template-columns:repeat(3,1fr)}
-.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.art{height:125px}.art span{font-size:55px}
-.benefits{grid-template-columns:1fr}
-.newsletter{align-items:flex-start;flex-direction:column}
-}
-@media(max-width:420px){
-.hero{flex-direction:column;align-items:flex-start}
-.hero h1{font-size:37px}
-.discount{align-self:center}
-.details{padding:10px}
-.details h3{font-size:13px}
-}
+body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:var(--dark)}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer;border:0}
+header{background:linear-gradient(120deg,#5215c4,#8d35f6,#f3489b);color:white;padding:16px 4%;position:sticky;top:0;z-index:5;box-shadow:0 4px 16px #38135b22}
+.top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.logo{font-size:25px;font-weight:900;letter-spacing:1px}
+.logo span{color:#ffe37e}
+.btn{padding:10px 12px;border-radius:11px;font-weight:bold}
+.white{background:white;color:#6723d0}
+.glass{background:#ffffff22;color:white;border:1px solid #ffffff66}
+.search{width:100%;padding:13px;border:0;border-radius:12px;margin-top:14px;outline:none}
+.hero{margin:18px 4%;padding:26px 21px;border-radius:22px;background:linear-gradient(120deg,#5112bc,#9d32f6,#ff579d);color:white;position:relative;overflow:hidden}
+.hero h1{font-size:clamp(27px,6vw,42px);max-width:300px;margin:13px 0}
+.hero p{max-width:270px;line-height:1.6}
+.hero:after{content:"🛍️";position:absolute;right:8px;bottom:0;font-size:90px;opacity:.35}
+.pill{display:inline-block;background:#ffe37e;color:#452078;border-radius:30px;padding:7px 12px;font-size:12px;font-weight:bold}
+.section{padding:0 4% 25px}
+.heading{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+h2{font-size:21px}
+.categories{display:flex;gap:8px;overflow:auto;padding:4px 0 14px}
+.cat{background:white;color:#6427a7;border:1px solid #e8d9ff;border-radius:25px;padding:10px 15px;white-space:nowrap}
+.cat.active{background:var(--p);color:white}
+.products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 5px 18px #3b145b0c;border:1px solid #eee5ff}
+.pic{height:145px;background:linear-gradient(135deg,#eadbff,#ffdced);position:relative}
+.pic img{width:100%;height:100%;object-fit:cover}
+.tag{position:absolute;top:8px;left:7px;background:#ffe37e;padding:5px 7px;border-radius:7px;font-size:10px;font-weight:bold}
+.info{padding:11px}
+.info h3{font-size:14px;min-height:33px;margin:0 0 7px}
+.meta{font-size:11px;color:#89769e;margin-bottom:9px}
+.price{font-size:18px;color:var(--p);font-weight:900}
+.old{font-size:12px;color:#a59ab3;text-decoration:line-through;margin-left:5px}
+.actions{display:flex;gap:6px;margin-top:10px}
+.add{flex:1;background:linear-gradient(110deg,#7028e8,#a334fa);color:white;padding:10px 4px;border-radius:9px;font-size:11px;font-weight:bold}
+.heart{background:#f4ebff;color:#7826cf;border-radius:9px;padding:8px}
+footer{background:#25133e;color:#eee2ff;text-align:center;padding:24px 12px;line-height:1.8;font-size:13px}
+.overlay{display:none;position:fixed;inset:0;background:#18072ba8;z-index:20;align-items:center;justify-content:center;padding:12px}
+.overlay.show{display:flex}
+.modal{width:min(100%,460px);max-height:92vh;overflow:auto;background:white;padding:19px;border-radius:18px}
+.modalhead{display:flex;justify-content:space-between;align-items:center}
+.field{display:block;width:100%;padding:12px;border:1px solid #e3d4f8;border-radius:10px;margin:7px 0 13px;background:white}
+label{font-size:13px;font-weight:bold}
+.primary,.secondary{width:100%;padding:12px;border-radius:10px;margin-top:8px;font-weight:bold}
+.primary{background:var(--p);color:white}
+.secondary{background:#f0e6ff;color:#5f20aa}
+.cartline{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 0;border-bottom:1px solid #eee}
+.small{background:#f0e6ff;color:#6520b7;border-radius:7px;padding:6px 9px}
+.muted{color:#857397;font-size:12px;line-height:1.6}
+.empty{text-align:center;padding:25px;color:#857397}
+@media(min-width:650px){.products{grid-template-columns:repeat(3,minmax(0,1fr))}.pic{height:200px}.hero{padding:38px 30px}}
+@media(min-width:950px){.products{grid-template-columns:repeat(4,minmax(0,1fr))}.hero{max-width:1150px;margin:22px auto}.section{max-width:1200px;margin:auto}}
 </style>
 </head>
 <body>
-<div class="top">✨ SHREE MART FESTIVE SALE — SHOP & SMILE ✨</div>
 
 <header>
-  <div class="logo">SHREE <span>MART</span></div>
-  <input class="search" id="search" placeholder="🔎 Search products...">
-  <button class="cart" id="openCart">🛍️ Bag <span id="count">0</span></button>
+  <div class="top">
+    <div class="logo">SHREE<span> MART</span></div>
+    <div>
+      <button class="btn glass" onclick="openAdmin()">⚙ Admin</button>
+      <button class="btn white" onclick="openCart()">🛒 Cart <span id="count">0</span></button>
+    </div>
+  </div>
+  <input class="search" id="search" type="search" placeholder="🔍 প্রোডাক্ট খুঁজুন..." oninput="renderProducts()">
 </header>
 
-<main>
-<div class="hero">
-  <div>
-    <small>✦ YOUR EVERYDAY SHOPPING STORE</small>
-    <h1>Little things.<br><span>Big happiness.</span></h1>
-    <p>Discover colourful finds, everyday essentials and new favourites at SHREE MART.</p>
-    <button onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">Explore Collection →</button>
-  </div>
-  <div class="discount"><div>UP TO</div><strong>30%</strong><b>OFF</b></div>
-</div>
-
-<section id="categoriesSection">
-  <div class="heading"><div><h2>Shop by Category</h2><p>Find something you love.</p></div></div>
-  <div class="categories" id="categories">
-    <button class="category active" data-cat="All"><span>✨</span><b>All Items</b></button>
-    <button class="category" data-cat="Fashion"><span>👕</span><b>Fashion</b></button>
-    <button class="category" data-cat="Beauty"><span>🧴</span><b>Beauty</b></button>
-    <button class="category" data-cat="Home"><span>🏡</span><b>Home</b></button>
-    <button class="category" data-cat="Gadgets"><span>🎧</span><b>Gadgets</b></button>
-    <button class="category" data-cat="Lifestyle"><span>🎒</span><b>Lifestyle</b></button>
-  </div>
+<section class="hero">
+  <span class="pill">WELCOME TO SHREE MART</span>
+  <h1>Shopping হোক আরও আনন্দের!</h1>
+  <p>তোমার পছন্দের প্রোডাক্ট খুঁজে নাও। সুন্দর কেনাকাটা শুরু হোক আজ থেকেই।</p>
+  <button class="btn white" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">Shop Now →</button>
 </section>
 
-<section id="shop">
-  <div class="heading"><div><h2>Trending Products 🔥</h2><p>Discover your next favourite.</p></div></div>
-  <div class="filters" id="filters">
-    <button class="filter active" data-filter="All">All Products</button>
-    <button class="filter" data-filter="Popular">Popular</button>
-    <button class="filter" data-filter="New">New Arrivals</button>
-    <button class="filter" data-filter="Sale">On Sale</button>
+<main class="section" id="shop">
+  <div class="heading">
+    <h2>✨ Our Products</h2>
+    <span class="muted" id="productCount"></span>
   </div>
+  <div class="categories" id="categories"></div>
   <div class="products" id="products"></div>
-</section>
-
-<section class="benefits">
-  <div class="benefit"><span>🚚</span><b>Easy Delivery</b><p>Convenient shopping experience.</p></div>
-  <div class="benefit"><span>💝</span><b>Curated Products</b><p>Everyday finds in one place.</p></div>
-  <div class="benefit"><span>🔒</span><b>Shop with Confidence</b><p>A simple, friendly store design.</p></div>
-</section>
-
-<section class="newsletter">
-  <div><h2>Join the SHREE MART family 💌</h2><p>Get updates on new arrivals and offers.</p></div>
-  <form id="newsletter"><input type="email" placeholder="Your email" required> <button>Join Us</button></form>
-</section>
 </main>
 
-<div class="note">DEMO WEBSITE — No real orders, email subscriptions or payments are processed.</div>
 <footer>
-  <div class="logo" style="color:white">SHREE <span>MART</span></div>
-  <p>Your colourful corner for everyday discoveries.</p>
-  <div class="footerlinks"><a href="#shop">Shop</a><a href="#categoriesSection">Categories</a><a href="#contact">Contact</a></div>
-  <p>© 2026 SHREE MART. Demo Storefront.</p>
+  <strong>SHREE MART</strong><br>
+  Your Shopping, Your Style 💜<br>
+  Online Shopping Demo
 </footer>
 
-<div class="overlay" id="overlay"></div>
-<aside class="drawer" id="drawer">
-  <div class="drawerhead"><h2>Your Shopping Bag 🛍️</h2><button id="closeCart">✕</button></div>
-  <div class="cartitems" id="cartitems"></div>
-  <div class="total"><span>Subtotal</span><span id="subtotal">₹0</span></div>
-  <button class="checkout" id="checkout">Continue to Checkout →</button>
-  <p style="font-size:11px;color:#766b85">Demo checkout only. No payment is taken.</p>
-</aside>
-<div class="toast" id="toast"></div>
+<div class="overlay" id="cartModal" onclick="outside(event,'cartModal')">
+ <div class="modal">
+  <div class="modalhead"><h2>🛒 Your Cart</h2><button class="small" onclick="closeModal('cartModal')">✕</button></div>
+  <div id="cartItems"></div>
+  <h3>মোট: ₹<span id="total">0</span></h3>
+  <label>আপনার নাম</label>
+  <input class="field" id="customerName" placeholder="নাম লিখুন">
+  <label>মোবাইল নম্বর</label>
+  <input class="field" id="customerPhone" type="tel" placeholder="ফোন নম্বর">
+  <label>ডেলিভারি ঠিকানা</label>
+  <textarea class="field" id="customerAddress" placeholder="সম্পূর্ণ ঠিকানা"></textarea>
+  <button class="primary" onclick="sendOrder()">📲 WhatsApp-এ অর্ডার করুন</button>
+  <p class="muted">অর্ডার পাঠালে WhatsApp খুলবে। বিক্রেতার সঙ্গে অর্ডার নিশ্চিত করে নেবেন।</p>
+ </div>
+</div>
+
+<div class="overlay" id="loginModal" onclick="outside(event,'loginModal')">
+ <div class="modal">
+  <div class="modalhead"><h2>🔐 Admin Login</h2><button class="small" onclick="closeModal('loginModal')">✕</button></div>
+  <label>পাসওয়ার্ড</label>
+  <input class="field" id="adminPassword" type="password" placeholder="Admin password">
+  <button class="primary" onclick="adminLogin()">Login</button>
+  <p class="muted">Demo password: <b>shree123</b></p>
+ </div>
+</div>
+
+<div class="overlay" id="adminModal" onclick="outside(event,'adminModal')">
+ <div class="modal">
+  <div class="modalhead"><h2>⚙ Admin Panel</h2><button class="small" onclick="closeModal('adminModal')">✕</button></div>
+  <p class="muted">প্রোডাক্ট যোগ, এডিট ও ডিলিট করো। এই ডেমোর ডেটা এই ব্রাউজারে সেভ হবে।</p>
+  <form id="productForm" onsubmit="saveProduct(event)">
+   <input type="hidden" id="editId">
+   <label>প্রোডাক্টের নাম</label>
+   <input class="field" id="pName" required placeholder="Product name">
+   <div class="heading">
+    <div style="flex:1"><label>দাম ₹</label><input class="field" id="pPrice" type="number" min="0" required></div>
+    <div style="flex:1"><label>আগের দাম ₹</label><input class="field" id="pOld" type="number" min="0"></div>
+   </div>
+   <label>ক্যাটাগরি</label>
+   <select class="field" id="pCategory">
+    <option>Fashion</option><option>Electronics</option><option>Home</option><option>Beauty</option><option>Accessories</option><option>Others</option>
+   </select>
+   <label>ছবির URL</label>
+   <input class="field" id="pImage" type="url" placeholder="https://...">
+   <label>বিবরণ</label>
+   <input class="field" id="pDescription" placeholder="Product details">
+   <button class="primary" id="saveBtn" type="submit">প্রোডাক্ট যোগ করুন</button>
+   <button class="secondary" type="button" onclick="resetForm()">ফর্ম পরিষ্কার করুন</button>
+  </form>
+  <hr style="border:0;border-top:1px solid #eee;margin:20px 0">
+  <h3>প্রোডাক্ট ম্যানেজমেন্ট</h3>
+  <div id="adminProducts"></div>
+  <button class="secondary" onclick="adminLogout()">Logout</button>
+ </div>
+</div>
 
 <script>
-const items=[
-[1,"Everyday Comfort Tee","Fashion","👕","#fbcfe8",399,599,"BESTSELLER",["Popular","Sale"],4.8],
-[2,"Hydra Glow Face Serum","Beauty","🧴","#fed7aa",299,399,"-25%",["Popular","Sale"],4.7],
-[3,"Cloud Soft Cushion","Home","🛋️","#bbf7d0",549,699,"COZY PICK",["Popular"],4.9],
-[4,"Wireless Music Buds","Gadgets","🎧","#bfdbfe",899,1199,"TRENDING",["Popular","Sale"],4.6],
-[5,"Mini Everyday Backpack","Lifestyle","🎒","#fde68a",699,899,"NEW",["New"],4.8],
-[6,"Daily Care Essentials","Beauty","🧼","#ddd6fe",249,299,"NEW",["New","Sale"],4.5],
-[7,"Minimal Desk Lamp","Home","💡","#fecaca",799,999,"SMART PICK",["Popular"],4.7],
-[8,"Classic Everyday Watch","Lifestyle","⌚","#e9d5ff",999,1299,"JUST IN",["New","Sale"],4.9],
-[9,"Weekend Style Sneakers","Fashion","👟","#ccfbf1",1199,1499,"FAVOURITE",["Popular"],4.6],
-[10,"Portable Mini Speaker","Gadgets","🔊","#fed7aa",649,849,"NEW",["New"],4.5],
-[11,"Ceramic Coffee Mug","Home","☕","#fef3c7",199,249,"SMALL JOY",["Sale"],4.8],
-[12,"Daily Carry Bottle","Lifestyle","🧋","#bae6fd",349,449,"ECO PICK",["Popular","Sale"],4.7]
-].map(x=>({id:x[0],name:x[1],cat:x[2],emoji:x[3],bg:x[4],price:x[5],old:x[6],badge:x[7],tags:x[8],rating:x[9]}));
+const WHATSAPP_NUMBER = "917501911715";
+const ADMIN_PASSWORD = "shree123"; // Demo only
 
-let category="All",filter="All",query="",cart={},wishlist=new Set();
-const $=id=>document.getElementById(id);
-const money=n=>"₹"+n.toLocaleString("en-IN");
+const starterProducts = [
+{id:1,name:"Classic Fashion Bag",price:599,old:899,category:"Fashion",tag:"BESTSELLER",description:"দৈনন্দিন ব্যবহারের স্টাইলিশ ব্যাগ",image:"https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=700&q=80"},
+{id:2,name:"Wireless Headphones",price:899,old:1299,category:"Electronics",tag:"POPULAR",description:"ওয়্যারলেস হেডফোন",image:"https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=700&q=80"},
+{id:3,name:"Classic Wrist Watch",price:749,old:999,category:"Accessories",tag:"TRENDING",description:"সুন্দর ডিজাইনের ঘড়ি",image:"https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=700&q=80"},
+{id:4,name:"Skincare Essentials",price:399,old:599,category:"Beauty",tag:"DEAL",description:"স্কিনকেয়ার প্রোডাক্ট",image:"https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=700&q=80"},
+{id:5,name:"Modern Table Lamp",price:649,old:899,category:"Home",tag:"NEW",description:"ঘরের জন্য আধুনিক ল্যাম্প",image:"https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=700&q=80"},
+{id:6,name:"Everyday Sneakers",price:999,old:1499,category:"Fashion",tag:"HOT",description:"ক্যাজুয়াল স্নিকার্স",image:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80"},
+{id:7,name:"Travel Backpack",price:799,old:1099,category:"Accessories",tag:"POPULAR",description:"ভ্রমণের ব্যাকপ্যাক",image:"https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=700&q=80"},
+{id:8,name:"Smart Watch",price:1199,old:1699,category:"Electronics",tag:"DEAL",description:"আধুনিক স্মার্টওয়াচ",image:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=80"}
+];
 
-function render(){
- const found=items.filter(p=>(category==="All"||p.cat===category)&&(filter==="All"||p.tags.includes(filter))&&(p.name+" "+p.cat).toLowerCase().includes(query.toLowerCase()));
- $("products").innerHTML=found.length?found.map(p=>`
+function loadProducts(){
+ try{
+  const saved=localStorage.getItem("shreeMartProducts");
+  return saved?JSON.parse(saved):starterProducts;
+ }catch(e){return starterProducts}
+}
+let products=loadProducts(),cart=[],wishlist=[],activeCategory="All",loggedIn=false;
+
+function persist(){localStorage.setItem("shreeMartProducts",JSON.stringify(products))}
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+
+function renderCategories(){
+ const cats=["All",...new Set(products.map(p=>p.category))];
+ document.getElementById("categories").innerHTML=cats.map(c=>
+ `<button class="cat ${c===activeCategory?"active":""}" onclick="setCategory('${esc(c)}')">${c==="All"?"✨ সব":esc(c)}</button>`
+ ).join("");
+}
+function setCategory(c){activeCategory=c;renderCategories();renderProducts()}
+
+function renderProducts(){
+ const q=document.getElementById("search").value.toLowerCase().trim();
+ const list=products.filter(p=>(activeCategory==="All"||p.category===activeCategory)&&
+ (p.name+" "+p.category+" "+(p.description||"")).toLowerCase().includes(q));
+ document.getElementById("productCount").textContent=list.length+"টি প্রোডাক্ট";
+ document.getElementById("products").innerHTML=list.length?list.map(p=>`
  <article class="card">
- <div class="art" style="background:linear-gradient(135deg,${p.bg},#ffffff)">
- <b class="badge">${p.badge}</b>
- <button class="heart" data-wish="${p.id}">${wishlist.has(p.id)?"❤️":"♡"}</button>
- <span>${p.emoji}</span></div>
- <div class="details"><small>${p.cat}</small><h3>${p.name}</h3>
- <div class="rating">★ ${p.rating} <span>· Demo rating</span></div>
- <div class="price">${money(p.price)} <span class="old">${money(p.old)}</span></div>
- <button class="add" data-add="${p.id}">＋ Add to Bag</button></div>
- </article>`).join(""):'<p>No products found. Try another search.</p>';
+  <div class="pic">
+   ${p.image?`<img src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy" onerror="this.style.display='none'">`:""}
+   ${p.tag?`<span class="tag">${esc(p.tag)}</span>`:""}
+  </div>
+  <div class="info">
+   <h3>${esc(p.name)}</h3><div class="meta">${esc(p.category)} · ⭐ Demo</div>
+   <span class="price">₹${Number(p.price)}</span>${p.old?`<span class="old">₹${Number(p.old)}</span>`:""}
+   <div class="actions">
+    <button class="add" onclick="addToCart(${Number(p.id)})">🛒 কার্টে যোগ</button>
+    <button class="heart" onclick="toggleWish(${Number(p.id)})">${wishlist.includes(p.id)?"❤️":"♡"}</button>
+   </div>
+  </div>
+ </article>`).join(""):'<div class="empty" style="grid-column:1/-1">কোনো প্রোডাক্ট পাওয়া যায়নি।</div>';
 }
-function renderCart(){
- const list=Object.entries(cart).filter(([id,q])=>q>0);
- $("count").textContent=list.reduce((s,[id,q])=>s+q,0);
- $("subtotal").textContent=money(list.reduce((s,[id,q])=>s+items.find(p=>p.id===+id).price*q,0));
- $("cartitems").innerHTML=list.length?list.map(([id,q])=>{
- const p=items.find(x=>x.id===+id);
- return `<div class="cartitem"><div class="cartemoji" style="background:${p.bg}">${p.emoji}</div>
- <div class="cartname"><b>${p.name}</b><p>${money(p.price)}</p>
- <div class="qty"><button data-id="${id}" data-delta="-1">−</button><b>${q}</b><button data-id="${id}" data-delta="1">+</button></div></div>
- <b>${money(p.price*q)}</b></div>`}).join(""):'<p style="text-align:center;padding:40px 0">🛍️<br><br>Your bag is empty.</p>';
-}
-function notify(message){$("toast").textContent=message;$("toast").classList.add("show");clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>$("toast").classList.remove("show"),2200)}
-function open(){ $("overlay").classList.add("show");$("drawer").classList.add("show");document.body.style.overflow="hidden"}
-function close(){ $("overlay").classList.remove("show");$("drawer").classList.remove("show");document.body.style.overflow=""}
 
-$("products").addEventListener("click",e=>{
- const add=e.target.closest("[data-add]"),wish=e.target.closest("[data-wish]");
- if(add){let id=+add.dataset.add;cart[id]=(cart[id]||0)+1;renderCart();notify("Added to your bag!")}
- if(wish){let id=+wish.dataset.wish;wishlist.has(id)?wishlist.delete(id):wishlist.add(id);render();notify(wishlist.has(id)?"Added to wishlist ❤️":"Removed from wishlist")}
-});
-$("categories").addEventListener("click",e=>{
- const b=e.target.closest("[data-cat]");if(!b)return;
- category=b.dataset.cat;
- document.querySelectorAll("[data-cat]").forEach(x=>x.classList.toggle("active",x===b));
- render();
-});
-$("filters").addEventListener("click",e=>{
- const b=e.target.closest("[data-filter]");if(!b)return;
- filter=b.dataset.filter;
- document.querySelectorAll("[data-filter]").forEach(x=>x.classList.toggle("active",x===b));
- render();
-});
-$("search").addEventListener("input",e=>{query=e.target.value;render()});
-$("openCart").onclick=open;$("closeCart").onclick=close;$("overlay").onclick=close;
-$("cartitems").addEventListener("click",e=>{
- const b=e.target.closest("[data-id]");if(!b)return;
- const id=+b.dataset.id;cart[id]=(cart[id]||0)+Number(b.dataset.delta);
- if(cart[id]<=0)delete cart[id];renderCart();
-});
-$("checkout").onclick=()=>notify(Object.keys(cart).length?"Demo only: real orders are not enabled.":"Your bag is empty.");
-$("newsletter").onsubmit=e=>{e.preventDefault();notify("Thank you! Newsletter demo submitted.");e.target.reset()};
-render();renderCart();
+function addToCart(id){
+ const p=products.find(x=>x.id===id);if(!p)return;
+ const item=cart.find(x=>x.id===id);
+ if(item)item.qty++;else cart.push({...p,qty:1});
+ updateCart();alert("কার্টে যোগ হয়েছে!");
+}
+function toggleWish(id){wishlist=wishlist.includes(id)?wishlist.filter(x=>x!==id):[...wishlist,id];renderProducts()}
+function updateCart(){
+ document.getElementById("count").textContent=cart.reduce((n,x)=>n+x.qty,0);
+ document.getElementById("total").textContent=cart.reduce((n,x)=>n+x.price*x.qty,0);
+}
+function openCart(){renderCart();document.getElementById("cartModal").classList.add("show")}
+function renderCart(){
+ const box=document.getElementById("cartItems");
+ if(!cart.length){box.innerHTML='<div class="empty">কার্ট খালি 🛍️</div>';updateCart();return}
+ box.innerHTML=cart.map(x=>`
+ <div class="cartline">
+  <div><b>${esc(x.name)}</b><br><small>₹${x.price} × ${x.qty}</small></div>
+  <div><button class="small" onclick="changeQty(${x.id},-1)">−</button>
+  <button class="small" onclick="changeQty(${x.id},1)">+</button>
+  <button class="small" onclick="removeItem(${x.id})">✕</button></div>
+ </div>`).join("");
+ updateCart();
+}
+function changeQty(id,n){
+ const x=cart.find(i=>i.id===id);if(!x)return;x.qty+=n;
+ if(x.qty<=0)cart=cart.filter(i=>i.id!==id);
+ renderCart();
+}
+function removeItem(id){cart=cart.filter(x=>x.id!==id);renderCart()}
+
+function sendOrder(){
+ if(!cart.length){alert("প্রথমে কার্টে প্রোডাক্ট যোগ করুন।");return}
+ const name=document.getElementById("customerName").value.trim();
+ const phone=document.getElementById("customerPhone").value.trim();
+ const address=document.getElementById("customerAddress").value.trim();
+ if(!name||!phone||!address){alert("নাম, ফোন ও ঠিকানা লিখুন।");return}
+ const lines=cart.map(x=>`${x.name} × ${x.qty} = ₹${x.price*x.qty}`).join("\n");
+ const total=cart.reduce((n,x)=>n+x.price*x.qty,0);
+ const message=`SHREE MART ORDER\nনাম: ${name}\nফোন: ${phone}\nঠিকানা: ${address}\n\n${lines}\n\nমোট: ₹${total}\nদয়া করে অর্ডার নিশ্চিত করুন।`;
+ window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(message),"_blank");
+}
+
+function openAdmin(){
+ if(loggedIn){renderAdmin();document.getElementById("adminModal").classList.add("show")}
+ else document.getElementById("loginModal").classList.add("show");
+}
+function adminLogin(){
+ if(document.getElementById("adminPassword").value===ADMIN_PASSWORD){
+  loggedIn=true;closeModal("loginModal");
+  document.getElementById("adminPassword").value="";
+  renderAdmin();document.getElementById("adminModal").classList.add("show");
+ }else alert("পাসওয়ার্ড ভুল হয়েছে।");
+}
+function adminLogout(){loggedIn=false;closeModal("adminModal")}
+function saveProduct(e){
+ e.preventDefault();if(!loggedIn)return;
+ const id=Number(document.getElementById("editId").value);
+ const p={
+  id:id||Date.now(),
+  name:document.getElementById("pName").value.trim(),
+  price:Number(document.getElementById("pPrice").value),
+  old:Number(document.getElementById("pOld").value)||0,
+  category:document.getElementById("pCategory").value,
+  image:document.getElementById("pImage").value.trim(),
+  description:document.getElementById("pDescription").value.trim(),
+  tag:""
+ };
+ if(id)products=products.map(x=>x.id===id?p:x);
+ else products.unshift(p);
+ persist();resetForm();renderCategories();renderProducts();renderAdmin();
+ alert("প্রোডাক্ট সেভ হয়েছে!");
+}
+function editProduct(id){
+ const p=products.find(x=>x.id===id);if(!p)return;
+ document.getElementById("editId").value=p.id;
+ document.getElementById("pName").value=p.name;
+ document.getElementById("pPrice").value=p.price;
+ document.getElementById("pOld").value=p.old||"";
+ document.getElementById("pCategory").value=p.category;
+ document.getElementById("pImage").value=p.image||"";
+ document.getElementById("pDescription").value=p.description||"";
+ document.getElementById("saveBtn").textContent="পরিবর্তন সেভ করুন";
+ document.getElementById("productForm").scrollIntoView({behavior:"smooth"});
+}
+function deleteProduct(id){
+ if(!confirm("প্রোডাক্টটি ডিলিট করবেন?"))return;
+ products=products.filter(p=>p.id!==id);persist();
+ renderCategories();renderProducts();renderAdmin();
+}
+function resetForm(){
+ document.getElementById("productForm").reset();
+ document.getElementById("editId").value="";
+ document.getElementById("saveBtn").textContent="প্রোডাক্ট যোগ করুন";
+}
+function renderAdmin(){
+ document.getElementById("adminProducts").innerHTML=products.length?products.map(p=>`
+ <div class="cartline">
+  <div><b>${esc(p.name)}</b><br><small>₹${p.price} · ${esc(p.category)}</small></div>
+  <div><button class="small" onclick="editProduct(${p.id})">Edit</button>
+  <button class="small" onclick="deleteProduct(${p.id})">Del</button></div>
+ </div>`).join(""):'<p>প্রোডাক্ট নেই।</p>';
+}
+function closeModal(id){document.getElementById(id).classList.remove("show")}
+function outside(e,id){if(e.target.id===id)closeModal(id)}
+
+renderCategories();
+renderProducts();
+updateCart();
 </script>
 </body>
 </html>
+
